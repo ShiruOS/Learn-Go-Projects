@@ -1,0 +1,217 @@
+Here are the core features for each project, with a stretch goal marked ⭐ where it adds useful practice.
+
+**Warm-ups**
+
+1. **Unit converter CLI**
+   - Convert temperature, length, and weight between units
+   - Read the value and units from user input
+   - Reject invalid units or non-numeric values
+   - Round output to 2 decimals
+   - ⭐ Add a conversion history for the session
+
+2. **Tip and bill splitter**
+   - Take bill amount, tip percentage, and number of people via flags
+   - Print subtotal, tip, total, and per-person amount
+   - Validate against negative values and zero people
+   - ⭐ Support uneven splits (one person pays more)
+
+3. **Number guessing game**
+   - Pick a random number in a range
+   - "Too high" or "too low" hints
+   - Limited number of attempts
+   - Handle non-numeric input without crashing
+   - ⭐ Difficulty levels and a best-score record
+
+4. **FizzBuzz and prime finder**
+   - FizzBuzz for a user-chosen range
+   - Check if a number is prime
+   - List all primes up to N
+   - ⭐ Prime factorization of a number
+
+5. **Calculator with error handling**
+   - Support +, -, *, /, and %
+   - Return proper errors for divide by zero and invalid input
+   - Parse expressions like `12 + 5`
+   - ⭐ Support multiple operations with correct precedence
+
+6. **Bank account simulator**
+   - `Account` struct with owner, balance, and transaction history
+   - Deposit, withdraw, and transfer methods
+   - Custom errors such as `ErrInsufficientFunds`
+   - Print a formatted statement
+   - ⭐ Interest calculation over time
+
+**Text and data handling**
+
+7. **Word frequency counter**
+   - Read text from a file or stdin
+   - Lowercase everything and strip punctuation
+   - Count words with a map
+   - Print the top N words sorted by count
+   - ⭐ Ignore common stop words ("the", "and")
+
+8. **Palindrome and anagram checker**
+   - Ignore case, spaces, and punctuation
+   - Palindrome check for a word or phrase
+   - Anagram check between two strings
+   - ⭐ Find all anagram groups in a word list file
+
+9. **Contact book CLI**
+   - Add, list, search, edit, and delete contacts
+   - Contact struct with name, phone, and email
+   - Sort by name
+   - Validate the email format
+   - ⭐ Prevent duplicate entries
+
+10. **Shape area calculator**
+    - `Shape` interface with `Area()` and `Perimeter()`
+    - Implement Circle, Rectangle, and Triangle
+    - Accept a list of shapes and print each one's details
+    - Sort shapes by area
+    - ⭐ Add a new shape without changing existing code
+
+11. **Student grade tracker**
+    - Store grades per student (map of name to grade slice)
+    - Add students and grades
+    - Compute average, median, highest, and lowest
+    - Assign letter grades
+    - ⭐ Class-wide ranking
+
+12. **CSV to JSON converter**
+    - Read a CSV path and write JSON output
+    - Use the header row as keys
+    - Handle missing or malformed rows with clear errors
+    - ⭐ Detect numbers and booleans instead of treating everything as strings
+    - ⭐ Add a JSON to CSV mode
+
+**Files and CLI tools**
+
+13. **Todo list CLI with JSON persistence**
+    - Subcommands: `add`, `list`, `done`, `delete`
+    - Save tasks to a JSON file and load on startup
+    - Each task has an ID, title, status, and created time
+    - Use pointers when updating tasks
+    - ⭐ Due dates and filtering by status
+
+14. **Mini grep**
+    - Usage: `mygrep pattern file`
+    - Print matching lines with line numbers
+    - Flags: `-i` (case-insensitive), `-v` (invert), `-c` (count)
+    - ⭐ Regex mode and searching multiple files
+
+15. **File organizer**
+    - Scan a directory and group files by extension
+    - Create folders like `images/`, `docs/`, `videos/`
+    - Move files into them
+    - Dry-run flag that only prints what would happen
+    - ⭐ Handle name collisions safely
+
+16. **Log file analyzer**
+    - Parse lines with timestamp, level, and message
+    - Count entries per level (INFO, WARN, ERROR)
+    - Filter by level or time range
+    - Show the most frequent error messages
+    - ⭐ Errors-per-hour summary
+
+17. **Mini wc**
+    - Count lines, words, and bytes
+    - Flags to show only one count
+    - Read from a file or stdin
+    - ⭐ Multiple files with a total row
+
+18. **Duplicate file finder**
+    - Walk a directory recursively
+    - Group files by size first
+    - Hash same-size files to confirm duplicates
+    - Print groups of duplicates
+    - ⭐ Interactive delete option
+
+19. **Config file parser**
+    - Parse `key=value` lines
+    - Skip comments and blank lines
+    - Load values into a typed struct (string, int, bool)
+    - Report the line number for syntax errors
+    - ⭐ Sections like `[database]`
+
+**Data structures and algorithms**
+
+20. **LRU cache**
+    - Fixed capacity, `Get` and `Put`
+    - Evict the least recently used item when full
+    - O(1) operations using a map plus a linked list
+    - ⭐ Make it generic and add hit/miss stats
+
+21. **Round-robin task scheduler**
+    - Tasks stored in a ring
+    - Each task gets a fixed time slice
+    - Add and remove tasks while it runs
+    - Print the execution order
+    - ⭐ Different time slices per task
+
+22. **Generic stack and queue library**
+    - Separate package with its own `go.mod`
+    - `Push`, `Pop`, `Peek`, `Len`, `IsEmpty`
+    - Type parameters so it works with any type
+    - Return errors for operations on an empty structure
+    - ⭐ Unit tests and a small example program
+
+23. **Sorting algorithm benchmarker**
+    - Implement bubble, insertion, merge, and quick sort
+    - Generate random data of different sizes
+    - Time each algorithm and compare with the stdlib sort
+    - Print a results table
+    - ⭐ Test already-sorted and reverse-sorted inputs
+
+24. **Priority task manager**
+    - Tasks with title, priority, and due date
+    - Sort by priority, then by due date
+    - Pop the next most urgent task
+    - ⭐ Implement using a heap
+
+**Concurrency and time**
+
+25. **Concurrent website checker**
+    - Read URLs from a file
+    - Check each in its own goroutine
+    - Report status code and response time
+    - Collect results through a channel
+    - Timeout for slow sites
+    - ⭐ Limit the number of simultaneous requests
+
+26. **Worker pool file hasher**
+    - Fixed number of workers (set by flag)
+    - Feed file paths through a jobs channel
+    - Workers hash files and send results back
+    - Wait for completion cleanly
+    - ⭐ Progress display
+
+27. **Countdown timer and Pomodoro CLI**
+    - Countdown that updates every second
+    - Pomodoro cycle: 25 min work, 5 min break
+    - Configurable durations via flags
+    - Graceful exit on Ctrl+C
+    - ⭐ Session log saved to a file
+
+28. **Thread-safe counter and rate limiter**
+    - Counter safe for many goroutines
+    - Prove the need for the mutex by first running it without one
+    - Rate limiter allowing N actions per time window
+    - ⭐ Per-user limits using a map
+
+**Capstones**
+
+29. **Mini key-value store**
+    - `Set`, `Get`, `Delete`, `List` commands
+    - Mutex-protected in-memory map
+    - Save to disk and reload on startup
+    - CLI or basic HTTP interface
+    - ⭐ Key expiry (TTL)
+
+30. **Struct validator using reflection**
+    - Read struct tags like `validate:"required,min=3"`
+    - Support rules: `required`, `min`, `max`, `email`
+    - Return all validation errors, not just the first
+    - Work with any struct
+    - ⭐ Custom rules registered by the user
+
+**Tip:** treat the core features as the "done" bar and the ⭐ items as optional. For each project, write a short README with usage examples. It reinforces the module and package concepts and makes a good portfolio piece.
